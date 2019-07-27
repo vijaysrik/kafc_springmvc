@@ -9,11 +9,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import com.marketplace.model.user.User;
 import com.marketplace.service.user.UserService;
 
 @Controller
 @RequestMapping(value = "/user")
+@SessionAttributes("loggedInUser")
 public class LoginController {
 	@Autowired(required = true)
 	@Qualifier(value = "userService")
@@ -44,7 +47,8 @@ public class LoginController {
 		// System.out.println("The USer Id is " +verifiedUser.getUserid());
 		// ModelAndView modelAndView = new ModelAndView("login");
 		if (verifiedUser != null) {
-			model.addAttribute("email", verifiedUser.getEmailid());
+			//model.addAttribute("email", verifiedUser.getEmailid());
+			model.addAttribute("loggedInUser", verifiedUser);
 			page = "loginSuccess";
 		} else {
 			page = "login";

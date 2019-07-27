@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <html>
 <link href="topnav.css " rel="stylesheet" type="text/css">
 <head>
@@ -15,11 +16,13 @@
 <input type="text" class="searchbar" placeholder="Search for artworks or artists" value="">
 </div>
 <br>
+<spring:url value="/user/displayRegister" var="register"></spring:url>
+<spring:url value="/user/displayLogin" var="login"></spring:url>
 <div class="topnav_bottom">
 
 <a href="#Cart" >Cart </a>
-<a href="user/displayRegister"> Register</a>
-<a href="user/displayLogin" >Login </a>
+<a href="${register}"> Register</a>
+<a href="${login}" >Login </a>
 <a href="#home" >HOME </a>
 
 </div>
