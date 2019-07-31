@@ -68,6 +68,12 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
 	<bean id="artistService" class="com.marketplace.service.art.ArtistServiceImpl">
 		<property name="artistDAO" ref="artistDAO"/>
 	</bean>
+	<bean id="artWorkDAO" class= "com.marketplace.dao.art.ArtWorkDAOImpl">
+		<constructor-arg ref="sessionFactory"/>
+	</bean>
+	<bean id="artWorkService" class="com.marketplace.service.art.ArtWorkServiceImpl">
+		<property name="artWorkDAO" ref="artWorkDAO"/>
+	</bean>	
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="50000000"/>
 	</bean>

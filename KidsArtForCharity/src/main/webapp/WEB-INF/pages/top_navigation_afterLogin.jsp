@@ -55,6 +55,7 @@
 <div class="topnav_bottom">
 <spring:url value="/art/displayRegisterArtist" var="register" htmlEscape="true"/>
 <spring:url value="/art/displayListingForm" var="listingForm" htmlEscape="true"/>
+<spring:url value="/home" var="home" htmlEscape="true"/>
 <a href="#Cart" >Cart </a>
 <div class="dropdown">
 <button class="dropbtn" > Sell Art </button>
@@ -64,7 +65,7 @@
   </div>
 </div>
 <a href="#" >${loggedInUser.emailid} </a>
-<a href="#home" >HOME </a>
+<a href="${home}" >HOME </a>
 
 </div>
 </body>
